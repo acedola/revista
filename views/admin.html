@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panel Administrativo</title>
+
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <div class="admin-header">
+        <h2>Registros Recibidos</h2>
+        <div>
+          <button class="admin-btn btn-export" id="btnExport">
+            Exportar CSV
+          </button>
+
+          <button class="admin-btn btn-logout" id="btnLogout">Salir</button>
+        </div>
+      </div>
+
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Título</th>
+            <th>PDF</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="banner"></header>
+
+    <div class="container">
+      <h2>A continuación complete los datos requeridos</h2>
+
+      <form id="formulario" enctype="multipart/form-data">
+        <div class="grid">
+          <!-- Columna 1 -->
+          <div class="col">
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input
+              type="text"
+              name="apellido"
+              placeholder="Apellido"
+              required
+            />
+            <input type="text" name="dni" placeholder="DNI" />
+            <input type="text" name="pseudonimo" placeholder="Pseudónimo" />
+          </div>
+
+          <!-- Columna 2 -->
+          <div class="col">
+            <input type="text" name="pais" placeholder="País de residencia" />
+            <input type="text" name="provincia" placeholder="Provincia" />
+            <input
+              type="text"
+              name="municipio"
+              placeholder="Municipio/Departamento"
+            />
+            <input
+              type="email"
+              name="correo"
+              placeholder="Correo Electrónico"
+            />
+          </div>
+
+          <!-- Columna 3 -->
+          <div class="col">
+            <input
+              type="text"
+              name="telefono"
+              placeholder="Teléfono de contacto"
+            />
+            <input
+              type="text"
+              name="institucion"
+              placeholder="Institución/Organismo al que pertenece"
+            />
+            <input
+              type="text"
+              name="titulo"
+              placeholder="Título del artículo"
+            />
+            <select name="secciones">
+              <option value="">Secciones</option>
+              <option>Sección 1</option>
+              <option>Sección 2</option>
+            </select>
+          </div>
+
+          <!-- Columna 4 -->
+          <div class="col">
+            <input type="text" name="ejes" placeholder="Ejes temáticos" />
+
+            <div class="drop-area" id="drop-area">
+              <span id="fileLabel">Adjunto</span>
+              <input
+                type="file"
+                name="adjunto"
+                id="fileElem"
+                accept=".pdf"
+                hidden
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="textareas">
+          <textarea name="observaciones" placeholder="Observaciones"></textarea>
+          <textarea name="resumen" placeholder="Resumen"></textarea>
+        </div>
+
+        <div class="radio-group">
+          <label class="radio-item">
+            <input type="radio" name="originalidad" value="original" required />
+            <a href="trabajosOriginales.pdf" target="_blank">
+              Acepto los términos. Trabajos originales
+            </a>
+          </label>
+
+          <label class="radio-item">
+            <input type="radio" name="originalidad" value="no-original" />
+            <a href="trabajosNoOriginales.pdf" target="_blank">
+              Acepto los términos. Trabajos NO originales
+            </a>
+          </label>
+        </div>
+
+        <div class="button-container">
+          <button type="submit" class="btn-enviar">Enviar</button>
+          <div id="formMessage" class="form-message"></div>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js">
+            <div {...getRootProps()} className="dropzone">
+
+      <input {...getInputProps()} />
+
+      <p>Arrastre el PDF o haga click</p>
+
+      </div>
+    </script>
+  </body>
+</html>
