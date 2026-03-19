@@ -5,7 +5,7 @@ const path = require('path');
 const articleRoutes = require('./routes/articles');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Configuración de EJS
 app.set('view engine', 'ejs');
@@ -18,10 +18,14 @@ app.use(express.json());
 
 // Rutas
 app.use('/articles', articleRoutes);
-app.use('/api', articleRoutes);
+app.use('/api', articleRoutes); // Ojo: Esta ruta también apunta a articleRoutes, puede generar conflictos si hay rutas '/' en ambos. Considera un prefijo diferente para la API si son cosas distintas.
 
 app.get('/', (req, res) => {
     res.redirect('/articles');
 });
 
-app.listen
+// ¡Aquí está la corrección!
+app.listen(port, () => {
+    console.log(`Servidor escuchando en el puerto ${port}`);
+});
+

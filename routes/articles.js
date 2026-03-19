@@ -7,7 +7,7 @@ const {
   updateArticle, 
   deleteArticle,
   addComment,
-  getCommentsByArticle
+   getComments
 } = require('../controllers/articleController');
 
 // Obtener todos los artículos
@@ -29,6 +29,6 @@ router.delete('/:id', deleteArticle);
 router.post('/:id/comments', addComment);
 
 // Obtener comentarios de un artículo
-router.get('/:id/comments', getCommentsByArticle);
+router.get('/:id/comments',  getComments);
 
 module.exports = router;
