@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<div class="container my-5">
+    <h1><%= article.title %></h1>
+    <p><%= article.content %></p>
+    <p class="text-muted">Publicado el <%= article.created_at.toLocaleDateString() %></p>
+
+    <% if (user) { %>
+        <form action="/articles/<%= article.id %>/comments" method="POST" class="mb-4">
+            
